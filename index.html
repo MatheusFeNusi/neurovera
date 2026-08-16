@@ -157,6 +157,9 @@ img { max-width: 100%; height: auto; }
 /* Thank-you video */
 .nv-thankyou-video { max-width: 640px; margin: 0 auto 32px; border-radius: var(--nv-radius); overflow: hidden; box-shadow: var(--nv-shadow-lg); background: #000; }
 .nv-thankyou-video video { width: 100%; display: block; vertical-align: middle; }
+@media (min-width: 768px) {
+  .nv-thankyou-video { max-width: 380px; }
+}
 
 /* === NEW PRICING CARDS === */
 .nv-pricing-wrapper { display: flex; align-items: stretch; justify-content: center; gap: 0; max-width: 860px; margin: 0 auto; }
