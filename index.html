@@ -19,7 +19,7 @@
   --nv-radius-sm: 8px; --nv-max-w: 860px;
 }
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--nv-text); background: var(--nv-white); line-height: 1.75; -webkit-font-smoothing: antialiased; padding-top: 60px; }
+body { margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--nv-text); background: var(--nv-white); line-height: 1.75; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4 { line-height: 1.3; font-weight: 700; color: var(--nv-primary-dark); }
 h2 { font-size: 1.65rem; margin-bottom: 1rem; }
 p { margin-bottom: 1rem; }
@@ -39,8 +39,8 @@ img { max-width: 100%; height: auto; }
 .bg-success { background-color: var(--nv-primary-dark) !important; }
 
 /* Header */
-.nv-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1050; background: var(--nv-primary); box-shadow: 0 2px 12px rgba(0,0,0,0.18); padding: 0; }
-.nv-header .container-main { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.nv-header { position: relative; z-index: 1050; background: var(--nv-primary); box-shadow: 0 2px 12px rgba(0,0,0,0.18); padding: 0; }
+.nv-header .container-main { display: block; padding: 15px 20px; }
 .nv-header-brand { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 1.05rem; color: var(--nv-white); text-decoration: none; letter-spacing: 0.5px; }
 .nv-header-brand:hover { color: var(--nv-white); }
 .nv-header-brand span { color: var(--nv-accent); }
@@ -213,23 +213,67 @@ img { max-width: 100%; height: auto; }
 
 <!-- Header -->
 <header class="nv-header">
-  <div class="container-main">
-    <a href="#" class="nv-header-brand">Neuro<span>Vera</span> <span class="nv-header-badge">REVIEW</span></a>
-    <a href="#pricing" class="nv-btn-header text-decoration-none">Go to The Official Website</a>
+  <div class="container-main text-center py-3">
+    <h1 class="text-white mb-0" style="font-size: 1.5rem; font-weight: 800;">The Truth About NeuroVera Reviews</h1>
+    <p class="text-white-50 mb-0" style="font-size: 1.2rem;">- 2026 -</p>
   </div>
 </header>
 
-<!-- Hero Section -->
+<!-- Info Bar -->
+<section class="bg-white py-3 border-bottom border-top" style="border-color: #ddd;">
+  <div class="container-main">
+    <div class="row text-center g-3">
+      <div class="col-6 col-md-2"><i class="fa-solid fa-check-circle text-success me-1"></i> GMP Certified</div>
+      <div class="col-6 col-md-2"><i class="fa-solid fa-flag-usa text-primary me-1"></i> Made in USA</div>
+      <div class="col-6 col-md-2"><i class="fa-solid fa-leaf text-success me-1"></i> 100% Natural Ingredients</div>
+      <div class="col-6 col-md-2"><i class="fa-solid fa-hospital text-primary me-1"></i> FDA-Registered Facility</div>
+      <div class="col-6 col-md-2"><i class="fa-solid fa-dna text-success me-1"></i> Non-GMO Formula</div>
+      <div class="col-6 col-md-2"><i class="fa-solid fa-capsules text-primary me-1"></i> 60 Capsules per Bottle</div>
+    </div>
+  </div>
+</section>
+
+<!-- Rating Section -->
+<section class="bg-white py-4 border-bottom" style="border-color: #ddd;">
+  <div class="container-main">
+    <div class="row align-items-center g-4">
+      <div class="col-md-4 text-center">
+        <div class="nv-stars" style="font-size: 1.5rem;">
+          <i class="fa-solid fa-star" style="color: var(--nv-accent);"></i>
+          <i class="fa-solid fa-star" style="color: var(--nv-accent);"></i>
+          <i class="fa-solid fa-star" style="color: var(--nv-accent);"></i>
+          <i class="fa-solid fa-star" style="color: var(--nv-accent);"></i>
+          <i class="fa-solid fa-star" style="color: var(--nv-accent);"></i>
+        </div>
+        <p class="small text-muted mb-0">Based on verified customer reviews</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <h2 class="mb-0" style="font-size: 2.5rem; font-weight: 800; color: var(--nv-primary-dark);">4.9<span style="font-size: 1.5rem;">/5</span></h2>
+        <p class="small text-muted mb-0">Average Rating Score</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <h2 class="mb-0" style="font-size: 2.5rem; font-weight: 800; color: var(--nv-primary-dark);">79,200+</h2>
+        <p class="small text-muted mb-0">Verified Customer Reviews</p>
+      </div>
+    </div>
+    <div class="text-center mt-3">
+      <span class="badge bg-success" style="font-size: 1rem; padding: 8px 16px;">365-Day Money Back Guarantee</span>
+    </div>
+  </div>
+</section>
+
+<!-- Main Hero Section -->
 <section class="section-py bg-white">
   <div class="container-main">
-    <div class="text-center mb-4">
-      <span class="nv-badge-green mb-3">Updated for 2026</span>
-      <h1 class="mt-2 mb-3">NeuroVera: The 90-Day Secret to a More Agile Mind</h1>
-      <p class="text-muted fs-6 mb-0">Natural formula that supports your focus and memory routine. 9 out of 10 users report improved mental clarity after 3 months. No strong stimulants, just smart brain nutrition.</p>
+    <div class="text-center mb-5">
+      <h1 class="mb-2" style="font-size: 3rem; font-weight: 900; color: #000;">NeuroVera</h1>
+      <h2 class="mb-3" style="font-size: 2rem; font-weight: 800; color: var(--nv-primary);">SCAM OR LEGIT ?</h2>
+      <p class="fs-5 text-muted mb-4">Read This Before Buying It</p>
+      <p class="text-muted mb-4" style="max-width: 800px; margin: 0 auto;">NeuroVera was formulated to support adults struggling with low mental energy, sluggish memory, daily fatigue, and fluctuating focus.</p>
+      <p class="text-muted mb-4" style="max-width: 800px; margin: 0 auto;">Rather than relying on a single ingredient, it blends multiple natural mechanisms that work together for a stronger, more comprehensive cognitive effect:</p>
     </div>
 
-    <!-- What 90 Days Looked Like -->
-    <div class="row align-items-center g-4 mt-4">
+    <div class="row align-items-center g-5">
       <div class="col-md-5">
         <div class="nv-ugc-card">
           <img src="images/imgi_21_NeuroVera-6BTLl.webp" alt="NeuroVera 6 Bottle Package" class="img-fluid">
@@ -237,35 +281,17 @@ img { max-width: 100%; height: auto; }
       </div>
       <div class="col-md-7">
         <ul class="nv-results-list">
-          <li>Mental clarity improved after 3–4 weeks</li>
-          <li>More consistent focus by week 6</li>
-          <li>No jitters, no side effects, no crashes</li>
-          <li>Just two capsules a day with water — simple as that</li>
+          <li><strong>Targeted Memory & Focus Support:</strong> Natural botanical compounds help optimize neural pathways and support healthy brain function, promoting efficient cognitive performance and mental clarity.</li>
+          <li><strong>Natural Mental Energy & Stamina Support:</strong> Key adaptogens work directly to support healthy brain balance, allowing your mind to maintain peak cognitive performance and endurance naturally.</li>
+          <li><strong>Sustained Daily Energy & Fatigue Control:</strong> Premium plant extracts promote steady, clean mental energy throughout the day, effectively eliminating the sudden mental crashes and exhaustion that derail your consistency.</li>
+          <li><strong>Confidence & Mental Clarity Enhancement:</strong> By approaching brain health from multiple angles, it helps restore natural confidence, mental sharpness, and cognitive responsiveness without the need for harsh stimulants or synthetic drugs.</li>
         </ul>
         <div class="nv-cta-block pt-4 text-start">
-          <a href="#pricing" class="nv-cta">Check Availability</a>
-          <p class="nv-cta-note mt-2">Secure checkout &nbsp;|&nbsp; Official website only</p>
+          <a href="#pricing" class="nv-cta" style="background: var(--nv-accent); color: #000; font-size: 1.2rem; padding: 16px 40px;">VISIT THE OFFICIAL WEBSITE</a>
+          <p class="nv-cta-note mt-3" style="font-size: 1.1rem; color: var(--nv-primary); font-weight: 700;">Special Offer Today: 72% OFF + Free Shipping!</p>
         </div>
       </div>
     </div>
-
-    <!-- Reviewer Persona -->
-    <div class="nv-reviewer-card mt-4">
-      <img src="images/avatar_1.png" alt="Linda M." class="nv-reviewer-avatar">
-      <div>
-        <div class="nv-reviewer-name">Linda M.</div>
-        <div class="nv-reviewer-title"><i class="fa-solid fa-circle-check me-1"></i>Verified User</div>
-        <div class="nv-reviewer-meta">Portland, Oregon &nbsp;|&nbsp; Age 62 &nbsp;|&nbsp; Retired Teacher</div>
-      </div>
-    </div>
-
-    <!-- Linda's opening quote -->
-    <div class="nv-quote-block">
-      "At 62, I noticed my mind wasn't the same anymore. Words that used to come easy now seemed to slip away. It wasn't a disease — it was just life, time, routine. But I didn't accept that this had to be permanent."
-      <cite>— Linda M., Portland</cite>
-    </div>
-
-    <p>Linda spent three decades building young minds. Now retired, she started noticing her mental clarity wasn't the same anymore. She decided to research natural options — and eventually tested NeuroVera for 90 days.</p>
   </div>
 </section>
 
