@@ -130,7 +130,7 @@ img { max-width: 100%; height: auto; }
 .nv-testimonial-card .nv-stars { color: var(--nv-accent); margin-bottom: 8px; }
 .nv-testimonial-card .nv-test-name { font-weight: 700; font-size: 0.95rem; }
 .nv-testimonial-card .nv-test-badge { font-size: 0.75rem; color: var(--nv-primary); font-weight: 600; }
-.nv-testimonial-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--nv-primary); }
+.nv-testimonial-avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid var(--nv-primary); }
 
 /* Guarantee Seal */
 .nv-guarantee-seal { max-width: 180px; margin: 0 auto 20px; }
@@ -191,10 +191,54 @@ img { max-width: 100%; height: auto; }
 .nv-faq-a { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s; font-size: 0.93rem; line-height: 1.7; color: var(--nv-text-light); }
 .nv-faq-a.open { max-height: 600px; padding: 0 20px 18px; }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .container-main { padding: 0 15px; }
+  .nv-header .container-main { padding: 10px 15px; }
+  .nv-header h1 { font-size: 1.3rem !important; }
+  .nv-header p { font-size: 1rem !important; }
+  .nv-info-bar .col-6 { margin-bottom: 10px; }
+  .nv-ugc-card { margin-bottom: 20px; }
+  .nv-testimonial-card { margin-bottom: 20px; }
+  .nv-benefit-card { margin-bottom: 20px; }
+  .nv-is-grid { grid-template-columns: 1fr; }
+  .row { flex-direction: column; }
+  .row .col-md-5, .row .col-md-7 { width: 100%; }
+  .row.align-items-center { align-items: flex-start; }
   .nv-pricing-wrapper { flex-direction: column; gap: 20px; }
   .nv-pc-best { margin: 0; }
+  .nv-pc { margin-bottom: 20px; }
+  .nv-testimonial-avatar { width: 80px; height: 80px; }
+}
+
+@media (max-width: 640px) {
+  .section-py { padding: 30px 0; }
+  .nv-cta { font-size: 1rem !important; padding: 12px 24px !important; }
+  .nv-cta-note { font-size: 0.9rem !important; }
+  .nv-results-list li { font-size: 0.9rem; }
   .nv-reviewer-card { flex-direction: column; text-align: center; }
+}
+
+/* Disable inspect element */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body::selection {
+  background: var(--nv-primary);
+  color: #fff;
+}
+
+/* Disable right click */
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 </style>
 <script type="text/javascript">
@@ -868,7 +912,7 @@ img { max-width: 100%; height: auto; }
       <p>What NeuroVera <strong>is</strong>, in my honest assessment, is a well-made, thoughtfully formulated, plant-based supplement that genuinely supports cognitive health over time. The ingredients are real, the manufacturing standards are solid, and the 365-day guarantee takes the pressure off your decision.</p>
       <p>It worked for me. It's working for others. But it requires patience and consistency — this is not a two-week fix. If you're willing to commit to 8–12 weeks of daily use, I believe there's a very good chance you'll notice a meaningful difference in your memory, clarity, and mental energy.</p>
       <p>If you're on the fence, the guarantee removes the risk. You can try it for a full year and get your money back if it doesn't work for you. That's as close to a no-brainer decision as I've ever seen in this space.</p>
-      <p class="mb-4"><strong style="color: var(--nv-gold);">I recommend giving NeuroVera a fair shot — your brain deserves it.</strong></p>
+      <p class="mb-4"><strong style="color: var(--nv-accent);">I recommend giving NeuroVera a fair shot — your brain deserves it.</strong></p>
       <div class="text-center">
         <a href="https://994469o58-wkfiodoo4l953972.hop.clickbank.net/" class="nv-cta" style="background:#fff; color: var(--nv-green-dark);">Ready to Support Your Brain Health?</a>
         <p class="nv-cta-note mt-3" style="color:rgba(255,255,255,0.7);">Try NeuroVera risk-free with a 365-day money-back guarantee.</p>
@@ -918,6 +962,28 @@ document.querySelectorAll('.nv-faq-q').forEach(question => {
       question.classList.add('active');
     }
   });
+});
+
+// Disable right-click
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+  return false;
+});
+
+// Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'F12' || 
+      (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || 
+      (e.ctrlKey && e.key === 'U')) {
+    e.preventDefault();
+    return false;
+  }
+});
+
+// Disable drag and drop
+document.addEventListener('dragstart', function(e) {
+  e.preventDefault();
+  return false;
 });
 </script>
 </body>
